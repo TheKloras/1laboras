@@ -22,35 +22,23 @@ public class Main {
                 antrasSkaicius = S.nextDouble();
                 switch (operacija) {
                     case '+':
-                        System.out.println(pirmasSkaicius + "+" + antrasSkaicius + "=" + sudeti(pirmasSkaicius,antrasSkaicius));
+                        System.out.println(pirmasSkaicius + "+" + antrasSkaicius + "=" + Prideti.prideti(pirmasSkaicius,antrasSkaicius));
                         break;
                     case '-':
-                        rez = pirmasSkaicius - antrasSkaicius;
-                        System.out.println(pirmasSkaicius + "-" + antrasSkaicius + "=" + rez);
+                        System.out.println(pirmasSkaicius + "-" + antrasSkaicius + "=" + Atimti.atimti(pirmasSkaicius,antrasSkaicius));
                         break;
                     case '*':
-                        rez = pirmasSkaicius * antrasSkaicius;
-                        System.out.println(pirmasSkaicius + "*" + antrasSkaicius + "=" + rez);
+                        System.out.println(pirmasSkaicius + "*" + antrasSkaicius + "=" + Dauginti.dauginti(pirmasSkaicius,antrasSkaicius));
                         break;
                     case '/':
                         if (antrasSkaicius == 0) {
                             System.out.println("Dalyba iš nulio negalima");
                         } else {
-                            rez = pirmasSkaicius / antrasSkaicius;
-                            System.out.println(pirmasSkaicius + "/" + antrasSkaicius + "=" + rez);
+                            System.out.println(pirmasSkaicius + "/" + antrasSkaicius + "=" + Dalinti.dalinti(pirmasSkaicius,antrasSkaicius));
                         }
+                        break;
                     case '#':
-                        for (int i = 0; i < 13; i++) {
-                            rez = pirmasSkaicius * antrasSkaicius + (antrasSkaicius - pirmasSkaicius) / pirmasSkaicius * (13 + i);
-                            if (rez < 6) {
-                                System.out.println(pirmasSkaicius + " * " + antrasSkaicius + " ( " + antrasSkaicius + " - " + pirmasSkaicius + ") / " + pirmasSkaicius + " * " + (13 + i) + " = " + rez + " < 6");
-                            } else if (rez > 6) {
-                                System.out.println(pirmasSkaicius + " * " + antrasSkaicius + " ( " + antrasSkaicius + " - " + pirmasSkaicius + ") / " + pirmasSkaicius + " * " + (13 + i) + " = " + rez + " > 6");
-                            } else {
-                                System.out.println(pirmasSkaicius + " * " + antrasSkaicius + " ( " + antrasSkaicius + " - " + pirmasSkaicius + ") / " + pirmasSkaicius + " * " + (13 + i) + " = " + rez + " == 6");
-                            }
-                            System.out.println();
-                        }
+                        Makaronas.makaronas(pirmasSkaicius,antrasSkaicius);
                         break;
                     default:
                         System.out.println("Nežinoma operacija");
